@@ -6,6 +6,7 @@ import Subservice from "./Views/Subservice"
 import Order from "./Views/Order"
 import Feedback from "./Views/Feedback"
 import Customer from "./Views/Customer"
+import Individualservice from "./Views/Individualservice"
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/order" component={Order} />
           <Route path="/customer" component={Customer} />
           <Route path="/feedback" component={Feedback} />
+          <Route path="/individualservice/:service_name" component={Individualservice}/>
 
         </Switch>
       </Router>

@@ -1,10 +1,10 @@
 import React from 'react'
-import ViewServiceComponent from '../components/Service/ViewServiceComponent'
+import ListSubserviceComponent from '../components/Subservice/ListSubserviceComponent'
 
 function Subservice() {
     return (
         <div>
-        <ViewServiceComponent />
+        <ListSubserviceComponent />
     </div>
     )
 }

@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 
 import { Link } from "react-router-dom"
-class ViewServiceComponent extends Component {
+class SubserviceComponent extends Component {
     constructor(props) {
         super(props)
-
         this.state = {
             subservices: []
         }
@@ -12,7 +11,6 @@ class ViewServiceComponent extends Component {
     }
 
     componentDidMount() {
-
         const apiUrl = 'http://localhost:4000/api/getAllSubCategory';
         fetch(apiUrl)
             .then(response => response.json())
@@ -101,4 +99,4 @@ class ViewServiceComponent extends Component {
 
 }
 
-export default ViewServiceComponent;
+export default SubserviceComponent;
