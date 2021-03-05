@@ -2,9 +2,9 @@ import React, { Component } from "react"
 import { Modal, Button, Row, Col, Form, FormGroup, FormLabel } from "react-bootstrap"
 
 export class CreateServiceComponent extends Component {
-  constructor(props) {
-    super(props)
-  }
+  // constructor(props) {
+  //   super(props)
+  // }
   handleSubmit(event) {
     event.preventDefault();
     // alert(event.target.servicename.value)

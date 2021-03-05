@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-
-import { Link } from "react-router-dom"
 class SubserviceComponent extends Component {
     constructor(props) {
         super(props)
@@ -48,6 +46,8 @@ class SubserviceComponent extends Component {
 
 
     render() {
+
+        //var addModalClose = () => this.setState({ addModalShow: false });
         return (
             <div className="container">
                 <h2 className="text-center" style={{ marginTop: "15px" }}>Subservice List</h2>
@@ -83,7 +83,7 @@ class SubserviceComponent extends Component {
                                             <td>
                                                 <button className="btn btn-info">Update </button>
                                                 <button style={{ marginLeft: "10px" }} className="btn btn-danger" onClick={() => { if (window.confirm('Are you sure you wish to delete this item?')) this.deleteSubService(subservice.subservice_id) }}>Delete </button>
-                                                <button style={{ marginLeft: "10px" }} className="btn btn-info"> <Link to="UpdateServiceComponent" params={{ service_name: subservice.service_name }}>View</Link> </button>
+
                                             </td>
                                         </tr>
                                 )

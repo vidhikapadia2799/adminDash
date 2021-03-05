@@ -2,20 +2,20 @@ import React, { Component } from "react"
 import { Modal, Button, Row, Col, Form, FormGroup, FormLabel } from "react-bootstrap"
 
 export class UpdateServiceComponent extends Component {
-  constructor(props) {
-    super(props)
-  }
+  // constructor(props) {
+  //   super(props)
+  // }
   handleSubmit(event) {
     event.preventDefault();
     const id = event.target.serviceid.value;
-    fetch('http://localhost:4000/api/UpdateService/'+id, {
+    fetch('http://localhost:4000/api/UpdateService/' + id, {
       method: 'PUT',
       headers: {
         "Content-type": "application/json; charset=UTF-8"
       },
 
       body: JSON.stringify({
-        
+
         service_name: event.target.servicename.value,
         service_image: event.target.serviceimg.value
       })

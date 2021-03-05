@@ -1,22 +1,20 @@
 import React, { Component } from "react"
 import { Modal, Button, Row, Col, Form, FormGroup, FormLabel } from "react-bootstrap"
 
-export class CreateSubserviceComponent extends Component {
-
+export class UpdateSubserviceComponent extends Component {
     // constructor(props) {
-    //     super(props)
+    //   super(props)
     // }
     handleSubmit(event) {
         event.preventDefault();
-
-        fetch('http://localhost:4000/api/AddSubService', {
-            method: 'POST',
+        const id = event.target.subserviceid.value;
+        fetch('http://localhost:4000/api/UpdateSubService/' + id, {
+            method: 'PUT',
             headers: {
                 "Content-type": "application/json; charset=UTF-8"
             },
 
             body: JSON.stringify({
-                service_name: localStorage.getItem("service_name"),
                 sub_servicename: event.target.subservicename.value,
                 image: event.target.subserviceimg.value,
                 price: event.target.subserviceprice.value,
@@ -47,67 +45,86 @@ export class CreateSubserviceComponent extends Component {
             >
                 <Modal.Header closeButton>
                     <Modal.Title id="contained-modal-title-vcenter">
-                        Add Subservice
-                     </Modal.Title>
+                        Update Subservice
+                    </Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
+                <Modal.Body >
                     <div className="container">
                         <Row>
                             <Col sm={6}>
                                 <Form onSubmit={this.handleSubmit}>
-                                    <FormGroup>
+                                    <FormGroup controlId="SubserviceId">
+                                        <FormLabel>Subservice Id</FormLabel>
+                                        <Form.Control
+                                            type="text"
+                                            placeholder="Subservice Id"
+                                            name="subserviceid"
+                                            disabled
+                                            defaultValue={this.props.subid}
+                                        />
+                                    </FormGroup>
+                                    <FormGroup controlId="SubserviceName">
                                         <FormLabel>Subservice Name</FormLabel>
                                         <Form.Control
                                             type="text"
                                             placeholder="Subservice Name"
                                             name="subservicename"
+                                            defaultValue={this.props.subname}
                                         />
                                     </FormGroup>
-                                    <FormGroup>
+                                    <FormGroup controlId="SubserviceImage">
                                         <FormLabel>Subservice Image</FormLabel>
                                         <Form.Control
-                                            type="file"
+                                            type="text"
                                             placeholder="Subservice Image"
                                             name="subserviceimg"
+                                            defaultValue={this.props.subimage}
                                         />
                                     </FormGroup>
-                                    <FormGroup>
+                                    <FormGroup controlId="SubservicePrice">
                                         <FormLabel>Subservice Price</FormLabel>
                                         <Form.Control
                                             type="text"
                                             placeholder="Subservice Price"
                                             name="subserviceprice"
+                                            defaultValue={this.props.subprice}
                                         />
+
                                     </FormGroup>
-                                    <FormGroup>
+                                    <FormGroup controlId="SubserviceDuation">
                                         <FormLabel>Subservice duration</FormLabel>
                                         <Form.Control
                                             type="text"
                                             placeholder="Subservice duration"
                                             name="subserviceduration"
+                                            defaultValue={this.props.subduration}
                                         />
                                     </FormGroup>
-                                    <FormGroup>
-                                        <FormLabel>Subservice short description</FormLabel>
+                                    <FormGroup controlId="SubserviceShortDesc">
+                                        <FormLabel>Subservice Short description</FormLabel>
                                         <Form.Control
                                             type="text"
-                                            placeholder="Short description"
+                                            placeholder="Subservice short description"
                                             name="subserviceshortdesc"
+                                            defaultValue={this.props.subshortdesc}
                                         />
                                     </FormGroup>
-                                    <FormGroup>
-                                        <FormLabel>Subservice long description</FormLabel>
+
+                                    <FormGroup controlId="SubserviceLongDesc">
+                                        <FormLabel>Subservice Long description</FormLabel>
                                         <Form.Control
                                             type="text"
-                                            placeholder="Long description"
+                                            placeholder="Subservice long description"
                                             name="subservicelongdesc"
+                                            defaultValue={this.props.sublongdesc}
                                         />
                                     </FormGroup>
                                     <Form.Group>
-                                        <Button variant="primary" type="submit" >
-                                            Add Subservice
+                                        <Button variant="primary" type="submit">
+                                            Update Service
                                          </Button>
                                     </Form.Group>
+
                                 </Form>
                             </Col>
                         </Row>

@@ -1,12 +1,11 @@
 import React from 'react'
 import IndividualSubserviceComponent from '../components/Subservice/IndividualSubserviceComponent'
 
-function Individualservice(props) {
+function Individualservice() {
     return (
         <div>
-        <IndividualSubserviceComponent service_name = {props.location.state.service_name} />
-        {/* {console.log(props.location.state)} */}
-    </div>
+            <IndividualSubserviceComponent />
+        </div>
     )
 }
 

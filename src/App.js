@@ -19,8 +19,7 @@ function App() {
           <Route path="/order" component={Order} />
           <Route path="/customer" component={Customer} />
           <Route path="/feedback" component={Feedback} />
-          <Route path="/individualservice/:service_name" component={Individualservice}/>
-
+          <Route path="/individualservice" component={Individualservice} />
         </Switch>
       </Router>
     </>

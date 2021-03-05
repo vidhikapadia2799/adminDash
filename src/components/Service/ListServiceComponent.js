@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 import { Link } from "react-router-dom"
 import { CreateServiceComponent } from "./CreateServiceComponent"
 import { UpdateServiceComponent } from "./UpdateServiceComponent"
@@ -53,7 +53,7 @@ class ListServiceComponent extends Component {
     }
 
     render() {
-        const { services, sid, sname, simage } = this.state;
+        const { sid, sname, simage } = this.state;
 
         var addModalClose = () => this.setState({ addModalShow: false });
         var editModalClose = () => this.setState({ editModalShow: false });
@@ -70,7 +70,6 @@ class ListServiceComponent extends Component {
                 <br></br>
                 <div className="row">
                     <table className="table table-striped table-bordered">
-
                         <thead style={{ textAlign: "center" }}>
                             <tr>
                                 <th>Service Name</th>
@@ -100,22 +99,20 @@ class ListServiceComponent extends Component {
                                                     <UpdateServiceComponent
                                                         show={this.state.editModalShow}
                                                         onHide={editModalClose}
-                                                        sid = {sid}
+                                                        sid={sid}
                                                         sname={sname}
-                                                        simage={simage} 
+                                                        simage={simage}
                                                     />
                                                 </ButtonToolbar>
                                             </td>
                                             <td>
-                                                <ButtonToolbar>                          
-                                                    <button className="btn btn-primary"><Link to= {{ pathname: '/individualservice/service_name', state: { service_name : service.service_name} }}>View</Link></button>
+                                                <ButtonToolbar>
+                                                    <button className="btn btn-primary" onClick={e => { localStorage.setItem("service_name", service.service_name) }}><Link to='/individualservice' style={{ color: "white" }}>View</Link></button>
                                                 </ButtonToolbar>
                                             </td>
                                             <td>
                                                 <button style={{ marginLeft: "10px" }} className="btn btn-danger" onClick={() => { if (window.confirm('Are you sure you wish to delete this item?')) this.deleteService(service.service_id) }}>Delete </button>
-                                                {/* <button style={{ marginLeft: "10px" }} className="btn btn-info"> <Link to="ViewServiceComponent" params={{ service_name: service.service_name }}>View</Link> </button> */}
                                             </td>
-                                            
                                         </tr>
                                 )
                             }
