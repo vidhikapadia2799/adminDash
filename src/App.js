@@ -6,6 +6,7 @@ import Subservice from "./Views/Subservice"
 import Order from "./Views/Order"
 import Feedback from "./Views/Feedback"
 import Customer from "./Views/Customer"
+import Provider from "./Views/Provider"
 import Individualservice from "./Views/Individualservice"
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" exact component={Service} />
           <Route path="/subservice" component={Subservice} />
           <Route path="/order" component={Order} />
+          <Route path="/provider" component={Provider} />
           <Route path="/customer" component={Customer} />
           <Route path="/feedback" component={Feedback} />
           <Route path="/individualservice" component={Individualservice} />

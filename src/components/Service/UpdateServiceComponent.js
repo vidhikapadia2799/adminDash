@@ -51,11 +51,12 @@ export class UpdateServiceComponent extends Component {
               <Col sm={6}>
                 <Form onSubmit={this.handleSubmit}>
                   <FormGroup controlId="ServiceId">
-                    <FormLabel>Service Name</FormLabel>
+                    <FormLabel>Service Id</FormLabel>
                     <Form.Control
                       type="text"
                       placeholder="Service Id"
                       name="serviceid"
+                      disabled
                       defaultValue={this.props.sid}
                     />
                   </FormGroup>

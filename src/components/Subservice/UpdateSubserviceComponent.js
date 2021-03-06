@@ -109,7 +109,6 @@ export class UpdateSubserviceComponent extends Component {
                                             defaultValue={this.props.subshortdesc}
                                         />
                                     </FormGroup>
-
                                     <FormGroup controlId="SubserviceLongDesc">
                                         <FormLabel>Subservice Long description</FormLabel>
                                         <Form.Control
@@ -124,7 +123,6 @@ export class UpdateSubserviceComponent extends Component {
                                             Update Service
                                          </Button>
                                     </Form.Group>
-
                                 </Form>
                             </Col>
                         </Row>

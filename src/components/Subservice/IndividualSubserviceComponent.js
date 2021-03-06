@@ -81,8 +81,6 @@ class IndividualServiceComponent extends Component {
                                 <th>Subservice Image</th>
                                 <th>Subservice price</th>
                                 <th>Subservice duration</th>
-                                {/* <th>Short desc</th>
-                                <th>Long desc</th> */}
                                 <th>Action</th>
                                 <th>Action</th>
                             </tr>
@@ -98,8 +96,7 @@ class IndividualServiceComponent extends Component {
                                             <td>{individualservice.image}</td>
                                             <td>{individualservice.price}</td>
                                             <td>{individualservice.time_duration}</td>
-                                            {/* <td>{individualservice.short_description}</td>
-                                            <td>{individualservice.long_description}</td> */}
+
                                             <td>
                                                 <ButtonToolbar>
                                                     <button className="btn btn-primary" onClick={() => this.setState({
